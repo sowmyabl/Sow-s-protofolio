@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sowmya B L — Portfolio</title>
+  <meta name="description" content="Sowmya B L — 3rd year engineering student. Projects, skills, resume and contact." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#6ee7b7; /* soft mint */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      color-scheme: dark;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #071023 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px;
+    }
+
+    /* container */
+    .container{max-width:1100px;margin:0 auto}
+
+    /* Header */
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#9be7ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042024
+    }
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px;border-radius:8px}
+    nav a:hover{color:#e6eef8;background:rgba(255,255,255,0.03)}
+
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#0b2b16,#08311a);border:1px solid rgba(255,255,255,0.04);color:var(--accent);text-decoration:none;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+    .intro h1{font-size:28px;margin:0 0 8px}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    .profile-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px}
+    .avatar{width:140px;height:140px;border-radius:20px;background:linear-gradient(180deg,#0ea5a4,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:#042024}
+    .meta{margin-top:12px}
+    .meta h3{margin:6px 0 0}
+    .meta p{margin:0;color:var(--muted);font-size:14px}
+
+    /* sections */
+    section{margin-bottom:20px}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .section-title h2{margin:0;font-size:18px}
+    .section-title p{margin:0;color:var(--muted);font-size:13px}
+
+    /* projects grid */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .proj{display:flex;flex-direction:column;gap:10px}
+    .proj .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+    .proj h3{margin:0}
+    .proj p{margin:0;color:var(--muted);font-size:14px}
+
+    /* skills */
+    .skills{display:flex;gap:18px;flex-wrap:wrap}
+    .skill{flex:1;min-width:180px}
+    .skill .label{display:flex;justify-content:space-between;font-weight:600;font-size:13px}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:8px;overflow:hidden}
+    .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7ad1ff)}
+
+    /* timeline / experience */
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .item{display:flex;gap:12px}
+    .item .left{min-width:110px;color:var(--muted);font-size:13px}
+    .item .right{flex:1}
+    .item h4{margin:0}
+    .item p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);font-weight:700;text-decoration:none}
+
+    /* subtle focus states */
+    a:focus{outline:2px solid rgba(110,231,183,0.15);outline-offset:3px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SB</div>
+        <div>
+          <div style="font-weight:700">Sowmya B L</div>
+          <div class="muted" style="font-size:13px">3rd year — Computer Science Engineering</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h1>Hello — I am <span style="color:var(--accent)">Sowmya B L</span></h1>
+          <p>3rd year engineering student focused on web development, data structures &amp; algorithms, and building intuitive UI/UX. I build projects that solve real problems and are production ready.</p>
+
+          <div class="actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="sowmyabl378@gmail.com">Email Me</a>
+            <a class="btn" href="https://drive.google.com/file/d/1LKvkrdSVywqQ8NydgZxAOtluX6WAZ5yk/view?usp=drivesdk" download>Download Resume</a>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted);font-size:13px">Currently open to internships • Available for freelance</div>
+        </div>
+
+        <aside class="card profile-card">
+          <div class="avatar">SB</div>
+          <div class="meta">
+            <h3>Sowmya B L</h3>
+            <p>3rd year — Computer Science Engineering</p>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:8px">
+            <a class="btn" href="#contact">Hire me</a>
+            <a class="btn" href="#skills">Skills</a>
+          </div>
+
+          <div style="margin-top:14px;width:100%">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted)"><span>Location</span><span>Chikkamagaluru, India</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:6px"><span>Phone</span><span>+91 827766009</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="section-title"><h2>About</h2><p class="muted">Summary about you</p></div>
+        <div class="card">
+          <p>I am a 3rd year engineering student pursuing a degree in Computer Science. I enjoy turning ideas into reality using code — particularly web applications and small data-driven tools. I have experience with HTML, CSS, JavaScript, Python, Django, and SQL. I take care to write readable, maintainable code and enjoy learning new technologies.</p>
+
+          <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+            <li>Academic projects: Daily Inspiration Quote Generator – A Django web app that generates daily motivational quotes with AI-created images using DALL·E.</li>
+            <li>Tools: VS Code, Git/GitHub, Postman, Figma (basic).</li>
+            <li>Interests: Web Developing, Competitive programming, UI/UX, Open-source contribution.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="section-title"><h2>Selected Projects</h2><p class="muted">Projects that showcase my skills</p></div>
+
+        <div class="projects">
+          <div class="proj card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Daily Inspiration Quote Generator</h3>
+              <div class="muted">Django · DALL·E</div>
+            </div>
+            <p class="muted">A web app that generates inspirational quote snippets and images. Features user accounts, scheduling, and an admin panel.</p>
+            <div class="tags">
+              <span class="tag">Django</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="proj card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Portfolio Website (this site)</h3>
+              <div class="muted">HTML · CSS · Responsive</div>
+            </div>
+            <p class="muted">Responsive personal portfolio built with semantic HTML and modern CSS emphasizing accessibility and performance.</p>
+            <div class="tags">
+              <span class="tag">Responsive</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">Performance</span>
+            </div>
+          </div>
+
+          <div class="proj card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Student Management Tool</h3>
+              <div class="muted">PHP · MySQL</div>
+            </div>
+            <p class="muted">A CRUD system to manage student records, attendance and simple reports.</p>
+            <div class="tags">
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="proj card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Algorithm Visualizer</h3>
+              <div class="muted">JavaScript</div>
+            </div>
+            <p class="muted">Interactive visualizations for sorting and graph algorithms — great for teaching and interviews.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Canvas</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <div class="section-title"><h2>Skills</h2><p class="muted">Technical stack & proficiency</p></div>
+        <div class="card skills">
+          <div class="skill">
+            <div class="label"><span>HTML &amp; CSS</span><span>90%</span></div>
+            <div class="bar"><span style="width:90%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>JavaScript</span><span>80%</span></div>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>Python (Django)</span><span>75%</span></div>
+            <div class="bar"><span style="width:75%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>Data Structures &amp; Algorithms</span><span>70%</span></div>
+            <div class="bar"><span style="width:70%"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience / Education -->
+      <section id="experience">
+        <div class="section-title"><h2>Experience &amp; Education</h2><p class="muted">Internships, trainings and academic history</p></div>
+        <div class="timeline">
+          <div class="item card">
+            <div class="left">2025 — Present</div>
+            <div class="right">
+              <h4>Open-source contributor</h4>
+              <p class="muted">Contributed bug fixes and documentation to several student-focused open-source projects on GitHub.</p>
+            </div>
+          </div>
+
+          <div class="item card">
+            <div class="left">2024— 2025</div>
+            <div class="right">
+              <h4>Intern — Web Development</h4>
+              <p class="muted">Worked on front-end features and small backend APIs. Improved page load performance and accessibility for product pages.</p>
+            </div>
+          </div>
+
+          <div class="item card">
+            <div class="left">2025 — Present</div>
+            <div class="right">
+              <h4>Bachelor of Engineering — Computer Science</h4>
+              <p class="muted">Adichunchanagiri Institute of Technology / Key courses: Algorithms, DBMS, Operating Systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-title"><h2>Contact</h2><p class="muted">Let's get in touch</p></div>
+        <div class="card" style="display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start">
+          <form action="mailto:your-email@example.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:10px">
+            <label class="muted">Name <input required type="text" name="name" placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></label>
+            <label class="muted">Email <input required type="email" name="email" placeholder="you@example.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></label>
+            <label class="muted">Message <textarea required name="message" rows="4" placeholder="Hi Sowmya..." style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></textarea></label>
+            <div style="display:flex;gap:8px">
+              <button class="btn" type="submit">Send</button>
+              <a class="btn" href="mailto:your-email@example.com">Email directly</a>
+            </div>
+          </form>
+
+          <aside style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+            <div class="muted">Contact details</div>
+            <div style="font-weight:700">Email</div>
+            <div class="muted">sowmyabl378@gmail.com</div>
+            <div style="font-weight:700">LinkedIn</div>
+            <div class="muted">www.linkedin.com/in/sowmyabl</div>
+            <div style="font-weight:700">GitHub</div>
+            <div class="muted">github.com/sowmyabl</div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Sowmya B L — Built with ❤️ • Designed for clarity and speed</div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple accessibility: allow keyboard focus on cards when clicked
+    document.querySelectorAll('.card').forEach(c=>{
+      c.tabIndex = 0;
+    });
+  </script>
+</body>
+</html>
